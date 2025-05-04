@@ -1,0 +1,1 @@
+python3 main.py ../2_T1DEXI 15 ../high_processed_T1DEXI

@@ -1,0 +1,1 @@
+python3 main.py ../10_UCHTT1DM 15 ../high_processed_UCHTT1DM

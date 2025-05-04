@@ -1,0 +1,1 @@
+python3 main.py ../8_T1DiabetesGranada 45 ../high_processed_T1DiabetesGranada

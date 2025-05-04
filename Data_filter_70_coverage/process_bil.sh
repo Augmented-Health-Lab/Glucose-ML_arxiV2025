@@ -1,0 +1,1 @@
+python3 main.py ../4_BIG_IDEA_LAB 15 ../high_processed_BIL
