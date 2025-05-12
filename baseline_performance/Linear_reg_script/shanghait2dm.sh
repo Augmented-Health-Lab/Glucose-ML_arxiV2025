@@ -1,0 +1,1 @@
+python3 ../linear_reg_main.py '../../Pre-processed CGM/7_ShanghaiT2DM/' '../linear_regression/7_ShanghaiT2DM_rmse.csv' 3 2 45

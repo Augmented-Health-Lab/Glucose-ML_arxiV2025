@@ -1,0 +1,1 @@
+python3 ../zero_order_main.py '../../Pre-processed CGM/9_AI-READI/' '../zero_order_hold/9_AI-READI_rmse.csv' 3 6 15

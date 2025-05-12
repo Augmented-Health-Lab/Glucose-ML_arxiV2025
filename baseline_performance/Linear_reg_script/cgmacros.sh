@@ -1,0 +1,1 @@
+python3 ../linear_reg_main.py '../../Pre-processed CGM/11_CGMacros/Dexcom GL/' '../linear_regression/11_CGMacros_rmse.csv' 11 30 15

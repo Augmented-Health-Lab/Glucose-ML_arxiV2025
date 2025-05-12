@@ -1,0 +1,1 @@
+python3 ../linear_reg_main.py '../../Pre-processed CGM/8_T1DiabetesGranada/' '../linear_regression/8_T1DiabetesGranada_rmse.csv' 3 2 45

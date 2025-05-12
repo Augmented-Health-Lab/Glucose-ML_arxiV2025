@@ -1,0 +1,1 @@
+python3 ../linear_reg_main.py '../../Pre-processed CGM/5_Diatrend/' '../linear_regression/5_Diatrend_rmse.csv' 3 6 15

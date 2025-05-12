@@ -1,0 +1,1 @@
+python3 ../linear_reg_main.py '../../Pre-processed CGM/9_AI-READI/' '../linear_regression/9_AI-READI_rmse.csv' 3 6 15

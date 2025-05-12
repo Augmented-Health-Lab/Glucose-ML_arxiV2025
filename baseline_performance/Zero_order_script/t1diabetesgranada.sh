@@ -1,0 +1,1 @@
+python3 ../zero_order_main.py '../../Pre-processed CGM/8_T1DiabetesGranada/' '../zero_order_hold/8_T1DiabetesGranada_rmse.csv' 3 2 45

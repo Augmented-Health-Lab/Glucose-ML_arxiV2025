@@ -1,0 +1,1 @@
+python3 ../linear_reg_main.py '../../Pre-processed CGM/10_UCHTT1DM/' '../linear_regression/10_UCHTT1DM_rmse.csv' 3 6 15

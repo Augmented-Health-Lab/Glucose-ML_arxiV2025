@@ -1,0 +1,1 @@
+python3 ../linear_reg_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../linear_regression/4_BIG_IDEA_LAB_rmse.csv' 3 6 15

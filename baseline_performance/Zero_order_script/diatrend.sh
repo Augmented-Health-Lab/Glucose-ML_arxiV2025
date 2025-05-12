@@ -1,0 +1,1 @@
+python3 ../zero_order_main.py '../../Pre-processed CGM/5_Diatrend/' '../zero_order_hold/5_Diatrend_rmse.csv' 3 6 15

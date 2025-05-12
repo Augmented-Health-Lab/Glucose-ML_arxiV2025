@@ -1,0 +1,1 @@
+python3 ../zero_order_main.py '../../Pre-processed CGM/11_CGMacros/Dexcom GL/' '../zero_order_hold/11_CGMacros_rmse.csv' 11 30 15

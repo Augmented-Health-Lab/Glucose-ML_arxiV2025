@@ -1,0 +1,1 @@
+python3 ../zero_order_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../zero_order_hold/4_BIG_IDEA_LAB_rmse.csv' 3 6 15

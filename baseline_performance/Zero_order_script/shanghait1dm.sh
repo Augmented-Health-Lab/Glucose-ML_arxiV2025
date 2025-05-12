@@ -1,0 +1,1 @@
+python3 ../zero_order_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../zero_order_hold/6_ShanghaiT1DM_rmse.csv' 3 2 45

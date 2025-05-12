@@ -1,0 +1,1 @@
+python3 ../linear_reg_main.py '../../Pre-processed CGM/2_T1DEXI/' '../linear_regression/2_T1DEXI_rmse.csv' 3 6 15

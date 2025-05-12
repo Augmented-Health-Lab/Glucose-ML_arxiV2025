@@ -1,0 +1,1 @@
+python3 ../zero_order_main.py '../../Pre-processed CGM/2_T1DEXI/' '../zero_order_hold/2_T1DEXI_rmse.csv' 3 6 15
