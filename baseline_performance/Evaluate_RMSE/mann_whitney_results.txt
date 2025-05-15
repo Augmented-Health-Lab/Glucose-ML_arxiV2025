@@ -1,0 +1,32 @@
+Mann-Whitney U Test Results
+==================================================
+
+Comparison: BIG_IDEA_LAB vs Diatrend
+U statistic: 8.0
+U statistic (alternative): 856.0
+P-value: 3.1569467483993184e-09
+Effect size (rank-biserial correlation): 0.981
+Z-score: -5.923
+--------------------------------------------------
+
+
+==================== New Test Run: 2025-05-15 14:21:15.910573 ====================
+
+Comparison: BIG_IDEA_LAB vs CGMacros
+U statistic: 185.0
+U statistic (alternative): 535.0
+P-value: 0.004222534952685019
+Effect size (rank-biserial correlation): 0.486
+Z-score: -2.861
+--------------------------------------------------
+
+
+==================== New Test Run: 2025-05-15 14:21:16.790035 ====================
+
+Comparison: Diatrend vs ShanghaiT1DM
+U statistic: 584.0
+U statistic (alternative): 64.0
+P-value: 1.6016167692809658e-05
+Effect size (rank-biserial correlation): -0.802
+Z-score: 4.331
+--------------------------------------------------

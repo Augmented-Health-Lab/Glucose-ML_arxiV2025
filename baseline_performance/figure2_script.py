@@ -81,7 +81,7 @@ def get_prediction_rmse(folder):
 
     groups = [k.split('_')[1] for k in sorted_dict.keys()]
     groups[2] = 'BIG IDEAs'  # optional renaming
-    # groups[3] = 'Diatrend'
+    groups[3] = 'DiaTrend'
 
     return data, groups
 
@@ -103,7 +103,7 @@ def get_boxplot(groups, zero_order_data, linear_reg_data):
     # Create boxplot positions
     positions_zero = np.array(range(len(groups))) * 2.0
     positions_linear = positions_zero + 0.6
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(10, 4))
     ax.grid(True)
 
     # Boxplots
@@ -119,15 +119,17 @@ def get_boxplot(groups, zero_order_data, linear_reg_data):
     # X-axis setup
     mid_positions = (positions_zero + positions_linear) / 2
     ax.set_xticks(mid_positions)
-    ax.set_xticklabels(groups)
-    ax.set_xticklabels(groups, rotation=15)
+    ax.set_xticklabels(groups, rotation=15, fontsize=11)  # Increased font size
 
-    # Labels and legend
-    ax.set_ylabel('30-min BG Pred. RMSE (mg/dL)')
-    ax.legend([bp1["boxes"][0], bp2["boxes"][0]], ['Zero-order Hold', 'Simple Linear Regression'])
+    # Labels and legend with increased font size
+    ax.set_ylabel('30-min BG Pred. RMSE (mg/dL)', fontsize=14)
+    ax.legend([bp1["boxes"][0], bp2["boxes"][0]], 
+              ['Zero-order Hold', 'Simple Linear Regression'], 
+              fontsize=12, loc='upper left')
+    ax.tick_params(axis='y', labelsize=11)  # Increase y-axis tick label size
 
     plt.tight_layout()
-    plt.savefig('../Paper_Figures/boxplot_filtered.png', bbox_inches='tight')
+    plt.savefig('../Paper_Figures/Figure2_boxplot.png', bbox_inches='tight')
     plt.show()
 
 
