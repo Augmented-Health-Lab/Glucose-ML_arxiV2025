@@ -57,7 +57,24 @@ def Mann_whitney_test(rmse_df1, rmse_df2, df_label1, df_label2, results_file):
 
 def main():
     """
-    Main function to run the Mann-Whitney test and plot histograms.
+    Main function to orchestrate the Mann-Whitney test between datasets.
+    
+    This function:
+    1. Processes command-line arguments for two dataset RMSE files
+    2. Sets up a results file for storing the statistical test results
+    3. Loads and validates the input RMSE data
+    4. Performs the Mann-Whitney U test and saves results
+    
+    The function requires four command-line arguments:
+    - Path to first RMSE CSV file
+    - Path to second RMSE CSV file 
+    - Label for the first dataset
+    - Label for the second dataset
+    
+    Results are saved to './mann_whitney_results.txt' and printed to console.
+    
+    Returns:
+        None: Results are saved to file and displayed in console
     """
     # Check if correct number of arguments provided
     if len(sys.argv) < 5:
