@@ -5,8 +5,7 @@ import sys
 
 def save_high_coverage_days(file_path, threshold=15, save_path=None):
     """
-    Counts the number of days with high and low CGM data coverage based on a specified threshold.
-    Optionally saves data from high-coverage days.
+    Save the days with ≥70% coverage of CGM data to a CSV file.
 
     Parameters:
     ----------
@@ -14,7 +13,7 @@ def save_high_coverage_days(file_path, threshold=15, save_path=None):
         The path to the CSV file containing CGM data. The file must have a 'timestamp' column in datetime format.
     threshold : int, optional
         The maximum allowable gap (in minutes) between consecutive readings to cap the time differences. 
-        Default is 15 minutes.
+        Default is 15 minutes. Greater than this threshold will be taken as data not avaiable during that time.
     save_path : str, optional
         If provided, saves the filtered data from days with ≥70% coverage to this CSV path.
     """
