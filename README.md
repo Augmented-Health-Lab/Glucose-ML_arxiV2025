@@ -24,20 +24,20 @@ pip install -r requirements.txt
 This repository is organized into the following folders:
 
 1. ```preprocessing_script/```
-    Contains scripts for cleaning and preparing raw datasets for analysis. 
+    Contains scripts for cleaning and preparing raw datasets for the task of blood glucose prediction. 
 
 2. ```Data_filter_70_coverage/```
     Includes scripts for filtering CGM data to retain days with at least 70% CGM data coverage. 
 3. ```baseline_performance/```
-    Contains scripts and results for baseline blood glucose prediction models. 
+    Contains scripts and results for implementing two naive blood glucose prediction models. 
 4. ```Paper_Figures/```
-    Includes figures and visualizations used in the paper for comparison and analysis.
+    Includes comparative analysis figures presented in the paper.
 
 5. ```Script_for_Figures/```
-    Include the Jupyter notebook files to calculate the plot the figures included in the paper.
+    Includes the Jupyter notebook files used to plot the figures presented in the paper.
 
 6. ```Script_for_Tables/```
-    Include the Jupyter notebook files to calculate the data for the tables included in the paper.
+    Includes the Jupyter notebook files to calculate the data for the tables included in the paper.
 
 ## Preprocessing
 
@@ -47,9 +47,9 @@ To preprocess the datasets, navigate to the ```preprocessing_script/``` folder a
 
 For baseline performance and blood glucose prediction case studies, refer to the ```baseline_performance/``` folder and its [README](./baseline_performance/README.md).
 
-## Compare and Analysis
+## Comparative Analysis
 
- ```Paper_Figures/``` includes the figuers discussed in the paper. For the code to plot those figures and the tables include in the paper, please refer to the ```Script_for_Figures/``` and ```Script_for_Tables/```.
+ ```Paper_Figures/``` includes the figuers presented in the paper. For the code to plot those figures and the tables included in the paper, please refer to the ```Script_for_Figures/``` and ```Script_for_Tables/```.
 
 ## License
 
