@@ -1,1 +1,3 @@
-python3 ../linear_reg_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../linear_regression/6_ShanghaiT1DM_rmse.csv' 3 2 45
+python3 ../linear_reg_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../linear_regression/30mins/6_ShanghaiT1DM_metrics.csv' 3 2 45
+python3 ../linear_reg_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../linear_regression/45mins/6_ShanghaiT1DM_metrics.csv' 5 3 45
+python3 ../linear_reg_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../linear_regression/60mins/6_ShanghaiT1DM_metrics.csv' 7 4 45

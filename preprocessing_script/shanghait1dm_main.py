@@ -5,6 +5,18 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 import os
 
+def determine_engine(filename):
+    """
+    Determine which Excel engine to use based on file extension
+    """
+    if filename.lower().endswith('.xlsx'):
+        return 'openpyxl'
+    elif filename.lower().endswith('.xls'):
+        return 'xlrd'
+    else:
+        # Default to openpyxl for unknown extensions
+        return 'openpyxl'
+
 def clean_shanghait1dm_data(root, dst):
     """
     Processes Shanghai T1DM Excel data files and standardizes CGM data format.
@@ -26,24 +38,41 @@ def clean_shanghait1dm_data(root, dst):
     os.makedirs(dst, exist_ok=True)
     subj_dict = {}
     for file in os.listdir(root):
-        if file.split('_')[0] not in subj_dict:
-            subj_dict.update({file.split('_')[0]: [file]})
-        else:
-            subj_dict[file.split('_')[0]].append(file)
+        if file.endswith('.xlsx') or file.endswith('.xls'):
+            if file.split('_')[0] not in subj_dict:
+                subj_dict.update({file.split('_')[0]: [file]})
+            else:
+                subj_dict[file.split('_')[0]].append(file)
     
     for subj in subj_dict.keys():
         if len(subj_dict[subj]) == 1:
-            df = pd.read_excel(os.path.join(root, subj_dict[subj][0]), sheet_name=subj_dict[subj][0].split('.')[0])
-            df_selected = df[['Date', 'CGM (mg / dl)']].rename(columns={'Date': 'timestamp', 'CGM (mg / dl)': 'BGvalue'})
-            df_selected.to_csv(os.path.join(dst, subj+'.csv'), index=None)
+            file_path = os.path.join(root, subj_dict[subj][0])
+            engine = determine_engine(subj_dict[subj][0])
+            try:
+                df = pd.read_excel(file_path, sheet_name=subj_dict[subj][0].split('.')[0], engine=engine)
+                df_selected = df[['Date', 'CGM (mg / dl)']].rename(columns={'Date': 'timestamp', 'CGM (mg / dl)': 'BGvalue'})
+                df_selected.to_csv(os.path.join(dst, subj+'.csv'), index=None)
+            except Exception as e:
+                print(f"Error processing {file_path}: {e}")
 
         else: # subject with multiple files
             subj_dict[subj].sort()
-            df_list = [pd.read_excel(os.path.join(root, file), sheet_name=file.split('.')[0]) for file in subj_dict[subj]]
-            df = pd.concat(df_list, ignore_index=True)
-            df_selected = df[['Date', 'CGM (mg / dl)']].rename(columns={'Date': 'timestamp', 'CGM (mg / dl)': 'BGvalue'})
-            df_selected.to_csv(os.path.join(dst, subj+'.csv'), index=None)
-            # break
+            df_list = []
+            for file in subj_dict[subj]:
+                file_path = os.path.join(root, file)
+                engine = determine_engine(file)
+                try:
+                    df = pd.read_excel(file_path, sheet_name=file.split('.')[0], engine=engine)
+                    df_list.append(df)
+                except Exception as e:
+                    print(f"Error processing {file_path}: {e}")
+            
+            if df_list:
+                df = pd.concat(df_list, ignore_index=True)
+                df_selected = df[['Date', 'CGM (mg / dl)']].rename(columns={'Date': 'timestamp', 'CGM (mg / dl)': 'BGvalue'})
+                df_selected.to_csv(os.path.join(dst, subj+'.csv'), index=None)
+            else:
+                print(f"No data was successfully processed for subject {subj}")
     
 def main():
     """

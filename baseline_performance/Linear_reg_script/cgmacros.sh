@@ -1,1 +1,3 @@
-python3 ../linear_reg_main.py '../../Pre-processed CGM/11_CGMacros/Dexcom GL/' '../linear_regression/11_CGMacros_rmse.csv' 11 30 15
+python3 ../linear_reg_main.py '../../Pre-processed CGM/11_CGMacros/Dexcom GL/' '../linear_regression/30mins/11_CGMacros_metrics.csv' 11 30 15
+python3 ../linear_reg_main.py '../../Pre-processed CGM/11_CGMacros/Dexcom GL/' '../linear_regression/45mins/11_CGMacros_metrics.csv' 31 45 15
+python3 ../linear_reg_main.py '../../Pre-processed CGM/11_CGMacros/Dexcom GL/' '../linear_regression/60mins/11_CGMacros_metrics.csv' 46 60 15

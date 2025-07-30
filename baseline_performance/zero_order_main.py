@@ -17,7 +17,8 @@ def zero_order_hold(cgm_folder, dst, past_sequence_length, future_offset, max_in
   3. Creates feature-prediction pairs based on specified window parameters
   4. Applies zero-order hold (last value prediction) for future glucose values
   5. Calculates RMSE metrics for different glucose ranges
-  
+  6. Calculates MAE metrics for different glucose ranges
+
   Args:
       cgm_folder (str): Path to the folder containing CGM data files
       dst (str): Path where the results CSV will be saved
@@ -46,13 +47,22 @@ def zero_order_hold(cgm_folder, dst, past_sequence_length, future_offset, max_in
     features_list, trues_list = get_seq_pred(series_list, past_sequence_length, future_offset)
     preds = [i.BGvalue.values[-1] for i in features_list]
     trues = [int(i.BGvalue) for i in trues_list]
+    
+    # evaluate performance
+    cur_res = []
     rmse, rmse_1, rmse_2, rmse_3 = rmse_summary(trues, preds)
-    res.append([file.split('.')[0], rmse, rmse_1, rmse_2, rmse_3])
+    cur_res += [file.split('.')[0], rmse, rmse_1, rmse_2, rmse_3]
+    mae, mae_1, mae_2, mae_3 = mae_summary(trues, preds)
+    cur_res += [mae, mae_1, mae_2, mae_3]
+    ceg_zones = CEG_summary(trues, preds)
+    # print(ceg_zones)
+    cur_res += list(ceg_zones.values())
+    res.append(cur_res)
     # break
 
-  df = pd.DataFrame(res, columns=['subject', 'overall', '< 70', '70 - 180', '> 180'])
+  df = pd.DataFrame(res, columns=['subject', 'overall (rmse)', '< 70 (rmse)', '70 - 180 (rmse)', '> 180 (rmse)',
+                                  'overall (mae)', '< 70 (mae)', '70 - 180 (mae)', '> 180 (mae)'] + list(ceg_zones.keys()))
   df.to_csv(dst, index=False)
-  
 
 
 def main():
@@ -64,7 +74,7 @@ def main():
     
     Args:
         cgm_folder: Path to folder containing CGM data files
-        dst: Path to save results
+        dst: Path to save RMSE results
         past_sequence_length: Number of past measurements to use
         future_offset: Prediction horizon (in measurement intervals)
         max_interval_minutes: Maximum gap between readings to consider same series
@@ -73,7 +83,7 @@ def main():
         DataFrame with results
     """
     if len(sys.argv) != 6:
-        print("Usage: python main.py <folder_path> <dstination> <past_sequence_length> <future_offset> <max_interval_minutes")
+        print("Usage: python main.py <folder_path> <dstination> <past_sequence_length> <future_offset> <max_interval_minutes>")
         sys.exit(1)
 
     cgm_folder = sys.argv[1]
@@ -81,7 +91,7 @@ def main():
     past_sequence_length = int(sys.argv[3])
     future_offset = int(sys.argv[4])
     max_interval_minutes = int(sys.argv[5])
-    
+
     print(f"Running zero-order hold with parameters:")
     print(f"  CGM folder: {cgm_folder}")
     print(f"  Output: {dst}")
@@ -91,7 +101,7 @@ def main():
     
     # Run the zero-order hold algorithm
     results = zero_order_hold(cgm_folder, dst, past_sequence_length, future_offset, max_interval_minutes)
-    
+
     print(f"Results saved to {dst}")
     return results
 

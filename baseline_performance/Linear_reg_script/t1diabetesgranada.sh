@@ -1,1 +1,3 @@
-python3 ../linear_reg_main.py '../../Pre-processed CGM/8_T1DiabetesGranada/' '../linear_regression/8_T1DiabetesGranada_rmse.csv' 3 2 45
+python3 ../linear_reg_main.py '../../Pre-processed CGM/8_T1DiabetesGranada/' '../linear_regression/30mins/8_T1DiabetesGranada_metrics.csv' 3 2 45
+python3 ../linear_reg_main.py '../../Pre-processed CGM/8_T1DiabetesGranada/' '../linear_regression/45mins/8_T1DiabetesGranada_metrics.csv' 5 3 45
+python3 ../linear_reg_main.py '../../Pre-processed CGM/8_T1DiabetesGranada/' '../linear_regression/60mins/8_T1DiabetesGranada_metrics.csv' 7 4 45

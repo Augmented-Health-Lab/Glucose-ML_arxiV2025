@@ -1,1 +1,3 @@
-python3 ../linear_reg_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../linear_regression/4_BIG_IDEA_LAB_rmse.csv' 3 6 15
+python3 ../linear_reg_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../linear_regression/30mins/4_BIG_IDEA_LAB_metrics.csv' 3 6 15
+python3 ../linear_reg_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../linear_regression/45mins/4_BIG_IDEA_LAB_metrics.csv' 7 9 15
+python3 ../linear_reg_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../linear_regression/60mins/4_BIG_IDEA_LAB_metrics.csv' 10 12 15

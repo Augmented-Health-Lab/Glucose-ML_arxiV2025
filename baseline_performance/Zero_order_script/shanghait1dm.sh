@@ -1,1 +1,3 @@
-python3 ../zero_order_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../zero_order_hold/6_ShanghaiT1DM_rmse.csv' 3 2 45
+python3 ../zero_order_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../zero_order_hold/30mins/6_ShanghaiT1DM_metrics.csv' 3 2 45
+python3 ../zero_order_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../zero_order_hold/45mins/6_ShanghaiT1DM_metrics.csv' 5 3 45
+python3 ../zero_order_main.py '../../Pre-processed CGM/6_ShanghaiT1DM/' '../zero_order_hold/60mins/6_ShanghaiT1DM_metrics.csv' 7 4 45

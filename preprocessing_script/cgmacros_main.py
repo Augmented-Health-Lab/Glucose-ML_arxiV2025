@@ -23,7 +23,7 @@ def clean_cgmacros_data(root, dst):
         None: The function saves processed CSV files to the specified destination directory
     """
     os.makedirs(dst, exist_ok=True)
-    type = dst.split('/')[2]
+    type = dst.split('/')[3]
     print(type)
     
     for folder in os.listdir(root):

@@ -1,1 +1,3 @@
-python3 ../zero_order_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../zero_order_hold/4_BIG_IDEA_LAB_rmse.csv' 3 6 15
+python3 ../zero_order_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../zero_order_hold/30mins/4_BIG_IDEA_LAB_metrics.csv' 3 6 15
+python3 ../zero_order_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../zero_order_hold/45mins/4_BIG_IDEA_LAB_metrics.csv' 7 9 15
+python3 ../zero_order_main.py '../../Pre-processed CGM/4_BIG_IDEA_LAB/' '../zero_order_hold/60mins/4_BIG_IDEA_LAB_metrics.csv' 10 12 15

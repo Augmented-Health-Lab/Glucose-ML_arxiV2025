@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import os
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 pd.set_option('display.max_columns', None)
 
 def split_into_continuous_series(df, past_sequence_length, future_offset, max_interval_minutes):
@@ -71,9 +72,6 @@ def get_seq_pred(series_list, past_sequence_length, future_offset):
     # break
   return features_list, trues_list
 
-from sklearn.metrics import mean_squared_error
-# import numpy as np
-
 def get_rmse(true, pred):
   """
   Calculate Root Mean Square Error between true and predicted values.
@@ -109,32 +107,90 @@ def rmse_summary(trues, preds):
   Returns:
       tuple: (overall_rmse, hypoglycemia_rmse, normal_range_rmse, hyperglycemia_rmse)
   """
-  print('overall rmse:')
   rmse = get_rmse(trues, preds)
-  print(rmse)
+  print('overall rmse:', rmse)
 
-  print('< 70 rmse:')
+  # print('< 70 rmse:')
   index_1 = [i for i, x in enumerate(trues) if x < 70]
   trues_1 = [trues[i] for i in index_1]
   preds_1 = [preds[i] for i in index_1]
   rmse_1 = get_rmse(trues_1, preds_1)
-  print(rmse_1)
+  # print(rmse_1)
 
-  print('70 - 180 rmse:')
+  # print('70 - 180 rmse:')
   index_2 = [i for i, x in enumerate(trues) if 70 <= x <= 180]
   trues_2 = [trues[i] for i in index_2]
   preds_2 = [preds[i] for i in index_2]
   rmse_2 = get_rmse(trues_2, preds_2)
-  print(rmse_2)
+  # print(rmse_2)
 
-  print('> 180 rmse: ')
+  # print('> 180 rmse: ')
   index_3 = [i for i, x in enumerate(trues) if x > 180]
   trues_3 = [trues[i] for i in index_3]
   preds_3 = [preds[i] for i in index_3]
   rmse_3 = get_rmse(trues_3, preds_3)
-  print(rmse_3)
+  # print(rmse_3)
 
   return rmse, rmse_1, rmse_2, rmse_3
+
+def get_mae(true, pred):
+  """
+  Calculate Mean Absolute Error between true and predicted values.
+  
+  Args:
+      true (list or array): True values
+      pred (list or array): Predicted values
+      
+  Returns:
+      float: MAE value, or None if calculation fails
+  """
+  try:
+    mae = mean_absolute_error(true, pred)
+    return mae
+  except:
+    return None
+
+def mae_summary(trues, preds):
+  """
+  Calculate MAE metrics across different clinically relevant glucose ranges.
+  
+  This function segments predictions into three clinically relevant glucose ranges:
+  - Hypoglycemia: < 70 mg/dL
+  - Normal range: 70-180 mg/dL
+  - Hyperglycemia: > 180 mg/dL
+  
+  Args:
+      trues (list or array): True glucose values
+      preds (list or array): Predicted glucose values
+      
+  Returns:
+      tuple: (overall_mae, hypoglycemia_mae, normal_range_mae, hyperglycemia_mae)
+  """
+  mae = get_mae(trues, preds)
+  print('overall mae:', mae)
+
+  # print('< 70 mae:')
+  index_1 = [i for i, x in enumerate(trues) if x < 70]
+  trues_1 = [trues[i] for i in index_1]
+  preds_1 = [preds[i] for i in index_1]
+  mae_1 = get_mae(trues_1, preds_1)
+  # print(mae_1)
+
+  # print('70 - 180 mae:')
+  index_2 = [i for i, x in enumerate(trues) if 70 <= x <= 180]
+  trues_2 = [trues[i] for i in index_2]
+  preds_2 = [preds[i] for i in index_2]
+  mae_2 = get_mae(trues_2, preds_2)
+  # print(mae_2)
+
+  # print('> 180 mae: ')
+  index_3 = [i for i, x in enumerate(trues) if x > 180]
+  trues_3 = [trues[i] for i in index_3]
+  preds_3 = [preds[i] for i in index_3]
+  mae_3 = get_mae(trues_3, preds_3)
+  # print(mae_3)
+
+  return mae, mae_1, mae_2, mae_3
 
 def character_filter(df):
   """
@@ -157,6 +213,8 @@ def character_filter(df):
   df = df[df['BGvalue'].astype(str).str.strip() != ''] #remove empty strings
   df = df[df['BGvalue'].astype(str).str.strip() != 'Low'] #remove "Low" values
   df = df[df['BGvalue'].astype(str).str.strip() != 'High'] #remove "High" values
+  # df = df[df['BGvalue'].astype(str).str.strip().str.isnumeric()] #keep only numeric values
+  df['BGvalue'] = df['BGvalue'].astype(float)  # Convert to float
   df = df.reset_index(drop=True)
 #   print(df.shape)
   return df
@@ -215,3 +273,61 @@ def BGvalue_filter(df):
   df = df.drop(['bg_diffs'], axis=1)
 #   print(df.shape)
   return df
+
+def CEG_zones(true, pred):
+    """
+    Determine the Clinical Evaluation Group (CEG) zone for a given true and predicted glucose value
+    based on clinical guidelines.
+    Args:
+        true (float): True glucose value
+        pred (float): Predicted glucose value
+    Returns:
+        str: CEG zone ('CEG_zoneA', 'CEG_zoneB', 'CEG_zoneC', 'CEG_zoneD', 'CEG_zoneE')
+    """
+    # Zone A: within ±20% of reference
+    if (true >= 70 and abs(pred - true) / true <= 0.2) or (true < 70 and pred < 70):
+        return 'CEG_zoneA'
+    
+    # Zone E: Wrong treatment direction (hypo ↔ hyper)
+    elif (true < 70 and pred > 180) or (true > 180 and pred < 70):
+        return 'CEG_zoneE'
+
+    # Zone C: Overcorrecting BG, not dangerous but unnecessary
+    elif (
+        (true >= 70 and pred >= true + 110) or
+        (true >= 130 and true <= 180) and (pred <= (7 / 5) * true - 182)):
+        return 'CEG_zoneC'
+
+    # Zone D: Dangerous failure to detect hypo/hyperglycemia
+    elif (
+        (true < 70 and pred >= 70 and pred <= 180) or
+        (true > 240 and pred >= 70 and pred <= 180)):
+        return 'CEG_zoneD'
+
+    # Zone B: Outside 20% but still benign
+    else:
+        return 'CEG_zoneB'
+
+def CEG_summary(trues, preds):
+    """
+    Calculate CEG (Clinical Evaluation Group) metrics based on true and predicted values.
+    
+    Args:
+        trues (list or array): True glucose values
+        preds (list or array): Predicted glucose values
+        
+    Returns:
+        dict: Counts of predictions in each CEG zone
+    """
+    zones = {'CEG_zoneA': 0, 'CEG_zoneB': 0, 'CEG_zoneC': 0, 'CEG_zoneD': 0, 'CEG_zoneE': 0}
+
+    for true, pred in zip(trues, preds):
+        zone = CEG_zones(true, pred)
+        zones[zone] += 1
+    total = sum(zones.values())
+    if total > 0:
+        zones_percent = {zone: (count / total * 100) for zone, count in zones.items()}
+    else:
+        zones_percent = {zone: None for zone in zones}
+    print(f"CEG zones: {zones_percent}")
+    return zones_percent

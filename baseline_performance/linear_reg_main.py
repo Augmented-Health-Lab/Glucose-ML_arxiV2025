@@ -79,13 +79,22 @@ def linear_regression(cgm_folder, dst, past_sequence_length, future_offset, max_
     for i in range(len(features_list)):
       pred = single_linear_regression(features_list[i], trues_list[i].timestamp)
       preds.append(pred)
-
     trues = [int(i.BGvalue) for i in trues_list]
+    
+    # evaluate performance
+    cur_res = []
     rmse, rmse_1, rmse_2, rmse_3 = rmse_summary(trues, preds)
-    res.append([file.split('.')[0], rmse, rmse_1, rmse_2, rmse_3])
+    cur_res += [file.split('.')[0], rmse, rmse_1, rmse_2, rmse_3]
+    mae, mae_1, mae_2, mae_3 = mae_summary(trues, preds)
+    cur_res += [mae, mae_1, mae_2, mae_3]
+    ceg_zones = CEG_summary(trues, preds)
+    # print(ceg_zones)
+    cur_res += list(ceg_zones.values())
+    res.append(cur_res)
     # break
 
-  df = pd.DataFrame(res, columns=['subject', 'overall', '< 70', '70 - 180', '> 180'])
+  df = pd.DataFrame(res, columns=['subject', 'overall (rmse)', '< 70 (rmse)', '70 - 180 (rmse)', '> 180 (rmse)',
+                                  'overall (mae)', '< 70 (mae)', '70 - 180 (mae)', '> 180 (mae)'] + list(ceg_zones.keys()))
   df.to_csv(dst, index=False)
 
 def main():
