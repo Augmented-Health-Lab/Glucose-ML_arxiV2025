@@ -39,6 +39,13 @@ This repository is organized into the following folders:
 6. ```Script_for_Tables/```
     Includes the Jupyter notebook files to calculate the data for the tables included in the paper.
 
+7. ```Auto_script/```
+    Contains automation scripts for streamlining the workflow. Includes:
+    - ```download_public_datasets.sh```: Automatically downloads the 5 public diabetes datasets into the "Original datasets" folder
+    - ```preprocess.sh```: Processes the downloaded datasets into standardized formats for analysis
+    - ```zero_order_auto_script.sh```: Automates the execution of all zero-order prediction model scripts
+    - ```linear_reg_auto_script.sh```: Automates the execution of all linear regression model scripts
+
 ## Preprocessing
 
 To preprocess the datasets, navigate to the ```preprocessing_script/``` folder and follow the instructions in its [README](./preprocessing_script/README.md).
@@ -50,6 +57,20 @@ For baseline performance and blood glucose prediction case studies, refer to the
 ## Comparative Analysis
 
  ```Paper_Figures/``` includes the figuers presented in the paper. For the code to plot those figures and the tables included in the paper, please refer to the ```Script_for_Figures/``` and ```Script_for_Tables/```.
+
+## Automation Scripts
+This project includes several automation scripts to streamline the workflow from data acquisition to model evaluation. The scripts are located in the ```Auto_script/``` folder and can be executed in sequence to reproduce the full pipeline.
+
+```bash
+cd Auto_script
+chmod +x *.sh   # Make all scripts executable
+./download_public_datasets.sh   # Download Public Datasets
+./preprocess.sh   # Preprocess the Datasets
+./zero_order_auto_script.sh   # Run Zero-Order Prediction Models
+./linear_reg_auto_script.sh   #Run Linear Regression Prediction Models
+```
+
+After running these scripts, all 5 public CGM datasets will be downloaded, preprocessed, and analyzed with both baseline prediction models. Results will be available in the ```baseline_performance/``` folder and its [README](./baseline_performance/README.md) described in detail.
 
 ## License
 

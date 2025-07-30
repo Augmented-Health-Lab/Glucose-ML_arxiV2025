@@ -17,10 +17,11 @@ baseline_performance/
 ├── linear_reg_main.py         # Main script for linear regression predictions
 ├── utils.py                   # Shared utility functions
 ├── figure2_script.py          # Script to generate summary boxplot
+├── metrics_summary.py         # Script to generate summary mertics
 ├── Zero_order_script/         # Shell scripts for zero-order hold on different datasets
 ├── Linear_reg_script/         # Shell scripts for linear regression on different datasets
-├── zero_order_hold/           # RMSE results from zero-order hold predictions
-├── linear_regression/         # RMSE results from linear regression predictions
+├── zero_order_hold/           # RMSE, MAE, CEG results from zero-order hold predictions
+├── linear_regression/         # RMSE, MAE, CEG results from linear regression predictions
 └── Evaluate_RMSE/             # Statistical evaluation scripts
 ```
 
@@ -121,6 +122,18 @@ python figure2_script.py
 
 This will generate boxplot comparisons of RMSE values across datasets.
 
+## Generating Evaluation Summaries
+
+The repository includes scripts for generating visualizations of model performance.
+
+**Generating and Saving Metrics:**
+
+```bash
+python metrics_summary.py
+```
+
+This will generate all mertics (RMSE, MAE and Clarke Error Grid) across datasets with different prediction horizons (30mins, 45mins, and 60mins). 
+
 ## Dataset Format
 
 Input CGM data files should contain at minimum:
@@ -140,5 +153,5 @@ To add a new dataset:
 
 1. Create a new shell script in the respective script folder (Zero_order_script or Linear_reg_script)
 2. Follow the format of existing scripts, adjusting input and output paths
-3. Run the script to generate RMSE results
+3. Run the script to generate RMSE, MAE, CEG results
 4. Update the Mann-Whitney scripts if you want to run statistical comparisons
