@@ -2,7 +2,8 @@
 Please cite the associated paper as follows:
 - **Prioleau, T., Lu, B. and Cui, Y., 2025. Glucose-ML: A collection of longitudinal diabetes datasets for development of robust AI solutions. arXiv preprint arXiv:2507.14077.
 https://doi.org/10.48550/arXiv.2507.14077**
-## Paper Abstract
+
+## Abstract
 Artificial intelligence (AI) algorithms are a critical part of state-of-the-art digital health technology for diabetes management. Yet, access to large high-quality datasets creates barriers that impede development of robust AI solutions. To accelerate development of transparent, reproducible, and robust AI solutions, we present Glucose-ML, a collection of 10 publicly available diabetes datasets, released within the last 7 years (i.e. 2018 - 2025). The Glucose-ML collection comprises over 300,000 days of continuous glucose monitor (CGM) data with a total of 38 million glucose samples, and was collected from 2500+ people, across 4 countries, living with type 1 diabetes, type 2 diabetes, prediabetes, and no diabetes. To support researchers and innovators with using this rich collection of diabetes datasets, we present a comparative analysis to guide algorithm developers with data selection, and to elicit strengths and weaknesses of each dataset. In addition, we conduct a case study focused on a common AI task within the field (i.e., blood glucose prediction). Through this study, we provide a benchmark for short-term blood glucose prediction across all 10 publicly available diabetes datasets within the Glucose-ML collection. We also show that the same algorithm can have significantly different prediction results when developed/evaluated with different datasets. Findings from this study are used to inform recommendations for developing robust AI solutions within the diabetes or broader health domain.
 
 ---
