@@ -1,0 +1,11 @@
+Publicly available Diabetes Datasets,Population,Participants,Gender (M/F),Age Mean (years),Age SD (years),Age Range,Hemoglobin A1C Mean (%),Hemoglobin A1C SD (%),Hemoglobin A1C Range
+OhioT1DM,T1D,12,7 / 5,NR,NR,20–80,NR,NR,NR
+T1DEXI,T1D,497,134 / 363,36.7,14.0,18–70,6.6,0.8,4.8–10.0
+BIG IDEAs,PreD & ND,16,7 / 9,NR,NR,35–65,5.7,0.3,5.3–6.4
+DiaTrend,T1D,54,17 / 37,32.1,15.0,19–70,7.8,0.8,6.3–10.0
+ShanghaiT1DM,T1D,16,5 / 7,57.8,11.1,37–73,8.2,3.4,4.9–15.1
+ShanghaiT2DM,T2D,100,56 / 44,60.2,13.7,22–97,6.9,2.5,2.1–13.3
+T1DiabetesGranada,T1D,736,363 / 373,43.6,16.1,14–85,8.3,1.8,4.0–18.0
+AI-READI,T2D & PreD / ND,703 / 364,462 / 605,60.3,11.1,40–87,NR,NR,NR
+UCHTT1DM,T1D / ND,9 / 11,10 / 10,27.2,4.0,NR,NR,NR,4.4–8.2
+CGMacros,T2D / PreD / ND,14 / 16 / 15,16 / 29,48.1,12.7,18–69,6.1,0.9,4.6–8.5

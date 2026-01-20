@@ -1,0 +1,11 @@
+Publicly available Diabetes Datasets,Accessibility,Year,Country,Person Count,Days/Person Mean,Days/Person Range,Total Glucose Samples
+"OhioT1DM",Controlled,2020,US,12,54,48-57,"166,533"
+"T1DEXI",Controlled,2022,US,497,27,3-28,"3,785,253"
+"BIG IDEAs",Open,2023,US,16,9.38,8-11,"36,898"
+"DiaTrend",Controlled,2023,US,54,512,31-1907,"7,680,740"
+"ShanghaiT1DM",Open,2023,China,12,15,7-42,"15,695"
+"ShanghaiT2DM",Open,2023,China,100,13,4-41,"112,475"
+"T1DiabetesGranada",Controlled,2024,Spain,736,350,8-1463,"22,671,708"
+"AI-READI",Controlled,2024,US,1067,11,2-13,"2,880,509"
+"UCHTT1DM",Open,2024,Chile,20,6,3-8,"29,174"
+"CGMacros",Open,2025,US,45,11,8-20,"629,825"
