@@ -79,13 +79,14 @@ chmod +x *.sh   # Make all scripts executable
 
 After running these scripts, all 5 public CGM datasets will be downloaded, preprocessed, and analyzed with both baseline prediction models. Results will be available in the ```baseline_performance/``` folder and its [README](./baseline_performance/README.md) described in detail.
 
+## Project Contributors
+- Temiloluwa Prioleau
+- Baiying Lu
+- Yanjun Cui
+
 ## Questions, Comments or Feedback
 
 Please reach out to the Principal Investigator: Temiloluwa Prioleau, PhD ([tpriole@emory.edu](mailto:tpriole@emory.edu)).
-
-## Project Contributors
-- Baiying Lu
-- Yanjun Cui
 
 ## License
 
