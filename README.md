@@ -23,9 +23,11 @@ Then, install the required packages:
 pip install -r requirements.txt
 ```
 
-## Structure
+## About
 
-This repository is organized into the following folders:
+This repository contains the code developed for analysis of 10 publicly available diabetes datasets curated in the Glucose-ML collection published here: https://doi.org/10.48550/arXiv.2507.14077. It is important to note that this repository does **not** host any of the datasets directly but _only_ associated code for working with each dataset. Table 1 in the above referenced paper includes direct links for accessing and downloading the open-access datasets (5 out of 10) and direct links for requesting accessing to the controlled-access datasets (5 out of 10) in the Glucose-ML collection.
+
+## Structure
 
 1. ```preprocessing_script/```
     Contains scripts for cleaning and preparing raw datasets for the task of blood glucose prediction. 
