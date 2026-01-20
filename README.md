@@ -7,6 +7,11 @@ https://doi.org/10.48550/arXiv.2507.14077**
 Artificial intelligence (AI) algorithms are a critical part of state-of-the-art digital health technology for diabetes management. Yet, access to large high-quality datasets creates barriers that impede development of robust AI solutions. To accelerate development of transparent, reproducible, and robust AI solutions, we present Glucose-ML, a collection of 10 publicly available diabetes datasets, released within the last 7 years (i.e. 2018 - 2025). The Glucose-ML collection comprises over 300,000 days of continuous glucose monitor (CGM) data with a total of 38 million glucose samples, and was collected from 2500+ people, across 4 countries, living with type 1 diabetes, type 2 diabetes, prediabetes, and no diabetes. To support researchers and innovators with using this rich collection of diabetes datasets, we present a comparative analysis to guide algorithm developers with data selection, and to elicit strengths and weaknesses of each dataset. In addition, we conduct a case study focused on a common AI task within the field (i.e., blood glucose prediction). Through this study, we provide a benchmark for short-term blood glucose prediction across all 10 publicly available diabetes datasets within the Glucose-ML collection. We also show that the same algorithm can have significantly different prediction results when developed/evaluated with different datasets. Findings from this study are used to inform recommendations for developing robust AI solutions within the diabetes or broader health domain.
 
 ---
+## About
+
+This repository contains the code developed for analysis of 10 publicly available diabetes datasets curated in the Glucose-ML collection published here: https://doi.org/10.48550/arXiv.2507.14077. It is important to note that this repository does **not** host any of the datasets directly but _only_ associated code for working with each dataset. Table 1 in the above referenced paper includes direct links for accessing and downloading the open-access datasets (5 out of 10) and direct links for requesting access to the controlled-access datasets (5 out of 10) in the Glucose-ML collection. 
+
+To support easy of use, this repository also provides automated scripts in the ```Auto_script/``` directory for downloading, preprocessinig (or harmonizing), and jointly analyzing the open-access diabetes datasets (5) in the Glucose-ML collection, including baseline evaluation of two naive baseline methods for the task of blood glucose prediction.  
 
 ## Requirements
 
@@ -22,10 +27,6 @@ Then, install the required packages:
 ```sh
 pip install -r requirements.txt
 ```
-
-## About
-
-This repository contains the code developed for analysis of 10 publicly available diabetes datasets curated in the Glucose-ML collection published here: https://doi.org/10.48550/arXiv.2507.14077. It is important to note that this repository does **not** host any of the datasets directly but _only_ associated code for working with each dataset. Table 1 in the above referenced paper includes direct links for accessing and downloading the open-access datasets (5 out of 10) and direct links for requesting accessing to the controlled-access datasets (5 out of 10) in the Glucose-ML collection.
 
 ## Structure
 
@@ -62,7 +63,7 @@ For baseline performance and blood glucose prediction case studies, refer to the
 
 ## Comparative Analysis
 
- ```Paper_Figures/``` includes the figuers presented in the paper. For the code to plot those figures and the tables included in the paper, please refer to the ```Script_for_Figures/``` and ```Script_for_Tables/```.
+ ```Paper_Figures/``` includes the figures presented in the paper. For the code to plot those figures and the tables included in the paper, please refer to the ```Script_for_Figures/``` and ```Script_for_Tables/```.
 
 ## Automation Scripts
 This project includes several automation scripts to streamline the workflow from data acquisition to model evaluation. The scripts are located in the ```Auto_script/``` folder and can be executed in sequence to reproduce the full pipeline.
@@ -81,5 +82,9 @@ After running these scripts, all 5 public CGM datasets will be downloaded, prepr
 ## License
 
 This project is licensed under the MIT License.
+
+## Questions, Comments or Feedback
+
+Please reach out directly the Principal Investigator: Temiloluwa Prioleau, PhD [tpriole@emory.edu](mailto:tpriole@emory.edu).
 
 
