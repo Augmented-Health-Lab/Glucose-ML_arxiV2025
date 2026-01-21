@@ -31,42 +31,33 @@ pip install -r requirements.txt
 ## Structure
 
 1. ```preprocessing_script/```
-    Contains scripts for cleaning and preparing raw datasets for the task of blood glucose prediction. 
+    Contains scripts for cleaning and preparing raw datasets for the task of blood glucose prediction. For details, refer to the instructions in its [README](./preprocessing_script/README.md).
 
 2. ```Data_filter_70_coverage/```
     Includes scripts for filtering CGM data to retain days with at least 70% CGM data coverage. 
+
 3. ```baseline_performance/```
-    Contains scripts and results for implementing two naive blood glucose prediction models. 
-4. ```Paper_Figures/```
+    Contains scripts and results for implementing two naive blood glucose prediction models. For detailed implementations and baseline performance, refer to its [README](./baseline_performance/README.md).
+
+4. ```Auto_script/```
+    Contains automation scripts for streamlining the workflow. Includes:
+    - ```download_public_datasets.sh```: Automatically downloads the 5 public diabetes datasets into the "Original datasets" folder.
+    - ```preprocess.sh```: Processes the downloaded datasets into standardized formats for analysis.
+    - ```zero_order_auto_script.sh```: Automates the execution of all zero-order prediction model scripts.
+    - ```linear_reg_auto_script.sh```: Automates the execution of all linear regression model scripts.
+
+5. ```Paper_Figures/```
     Includes comparative analysis figures presented in the paper.
 
-5. ```Script_for_Figures/```
+6. ```Script_for_Figures/```
     Includes the Jupyter notebook files used to plot the figures presented in the paper.
 
-6. ```Script_for_Tables/```
+7. ```Script_for_Tables/```
     Includes the Jupyter notebook files to calculate the data for the tables included in the paper.
 
-7. ```Auto_script/```
-    Contains automation scripts for streamlining the workflow. Includes:
-    - ```download_public_datasets.sh```: Automatically downloads the 5 public diabetes datasets into the "Original datasets" folder
-    - ```preprocess.sh```: Processes the downloaded datasets into standardized formats for analysis
-    - ```zero_order_auto_script.sh```: Automates the execution of all zero-order prediction model scripts
-    - ```linear_reg_auto_script.sh```: Automates the execution of all linear regression model scripts
 
-## Preprocessing
-
-To preprocess the datasets, navigate to the ```preprocessing_script/``` folder and follow the instructions in its [README](./preprocessing_script/README.md).
-
-## Case Study: Blood glucose prediction
-
-For baseline performance and blood glucose prediction case studies, refer to the ```baseline_performance/``` folder and its [README](./baseline_performance/README.md).
-
-## Comparative Analysis
-
- ```Paper_Figures/``` includes the figures presented in the paper. For the code to plot those figures and the tables included in the paper, please refer to the ```Script_for_Figures/``` and ```Script_for_Tables/```.
-
-## Automation Scripts
-This project includes several automation scripts to streamline the workflow from data acquisition to model evaluation. The scripts are located in the ```Auto_script/``` folder and can be executed in sequence to reproduce the full pipeline.
+## Run Automation Scripts
+To reproduce the full pipeline—from data acquisition to model evaluation—execute the scripts located in the ```Auto_script/``` folder in the following sequence:
 
 ```bash
 cd Auto_script
@@ -77,7 +68,13 @@ chmod +x *.sh   # Make all scripts executable
 ./linear_reg_auto_script.sh   #Run Linear Regression Prediction Models
 ```
 
-After running these scripts, all 5 public CGM datasets will be downloaded, preprocessed, and analyzed with both baseline prediction models. Results will be available in the ```baseline_performance/``` folder and its [README](./baseline_performance/README.md) described in detail.
+After running these scripts, all 5 public CGM datasets will be downloaded, preprocessed, and analyzed with both baseline prediction models. Results will be available in the ```baseline_performance/``` folder.
+
+
+## Comparative Analysis
+
+ ```Paper_Figures/``` includes the figures presented in the paper. For the code to plot those figures and the tables included in the paper, please refer to the ```Script_for_Figures/``` and ```Script_for_Tables/```.
+
 
 ## Project Contributors
 - Baiying Lu
