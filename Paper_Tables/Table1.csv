@@ -1,11 +1,11 @@
-Publicly available Diabetes Datasets,Accessibility,Year,Country,Person Count,Days/Person Mean,Days/Person Range,Total Glucose Samples
-"OhioT1DM",Controlled,2020,US,12,54,48-57,"166,533"
-"T1DEXI",Controlled,2022,US,497,27,3-28,"3,785,253"
-"BIG IDEAs",Open,2023,US,16,9.38,8-11,"36,898"
-"DiaTrend",Controlled,2023,US,54,512,31-1907,"7,680,740"
-"ShanghaiT1DM",Open,2023,China,12,15,7-42,"15,695"
-"ShanghaiT2DM",Open,2023,China,100,13,4-41,"112,475"
-"T1DiabetesGranada",Controlled,2024,Spain,736,350,8-1463,"22,671,708"
-"AI-READI",Controlled,2024,US,1067,11,2-13,"2,880,509"
-"UCHTT1DM",Open,2024,Chile,20,6,3-8,"29,174"
-"CGMacros",Open,2025,US,45,11,8-20,"629,825"
+Index,Dataset,Accessibility,Year Published,Country,Population,# Participants,Total # Days with CGM Data,Mean Glucose Data Duration per Participant (days),Range Glucose Data Duration (days),Total Glucose Samples (# Observations),Link to Paper / Documentation,Link to Dataset
+1,OhioT1DM,Controlled-Access,"2018 & 2020",US,T1D,12,652,54.33,"48-57",166530,https://pmc.ncbi.nlm.nih.gov/articles/PMC7881904/,https://webpages.charlotte.edu/rbunescu/data/ohiot1dm/OhioT1DM-dataset.html
+2,T1DEXI,Controlled-Access,2022,US,T1D,497,13522,27.21,"3-28",3778525,https://pubmed.ncbi.nlm.nih.gov/36795053/,https://doi.org/10.25934/PR00008428
+3,BIG IDEAs,Open-Access,"2022 & 2023",US,"PreD; ND",16,150,9.38,"8-11",36898,https://www.nature.com/articles/s41746-021-00465-w,https://doi.org/10.13026/zthx-5212
+4,DiaTrend,Controlled-Access,2023,US,T1D,54,27663,512.28,"31-1907",7565714,https://www.nature.com/articles/s41597-023-02469-5,https://doi.org/10.7303/syn38187184
+5,ShanghaiT1DM,Open-Access,2023,China,T1D,12,181,15.08,"7-42",15695,https://www.nature.com/articles/s41597-023-01940-7,https://doi.org/10.6084/m9.figshare.c.6310860
+6,ShanghaiT2DM,Open-Access,2023,China,T2D,100,1292,12.92,"4-41",112462,https://www.nature.com/articles/s41597-023-01940-7,https://doi.org/10.6084/m9.figshare.c.6310860
+7,T1DiabetesGranada,Controlled-Access,2024,Spain,T1D,736,257782,350.25,"8-1463",22608752,https://www.nature.com/articles/s41597-023-02737-4,https://doi.org/10.5281/zenodo.10050943
+8,AI-READI,Controlled-Access,2024,US,"T2D; PreD; ND",1067,11181,10.66,"2-13",2860350,https://doi.org/10.1038/s42255-024-01165-x,https://doi.org/10.60775/fairhub.2
+9,UCHTT1DM,Open-Access,2024,Chile,"T1D; ND",20,127,6.35,"3-8",29174,https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10433750,https://github.com/fisiologiacuantitativauc/UC_HT_T1DM
+10,CGMacros,Open-Access,2025,US,"T2D; PreD; ND",45,493,10.96,"8-20",629825,"Paper under review",https://doi.org/10.13026/3z8q-x658
