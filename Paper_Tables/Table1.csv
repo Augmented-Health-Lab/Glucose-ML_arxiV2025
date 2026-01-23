@@ -1,7 +1,7 @@
 Index,Dataset,Accessibility,Year Published,Country,Population,# Participants,Total # Days with CGM Data,Mean Glucose Data Duration per Participant (days),Range Glucose Data Duration (days),Total Glucose Samples (# Observations),Link to Paper / Documentation,Link to Dataset
 1,OhioT1DM,Controlled-Access,"2018 & 2020",US,T1D,12,652,54.33,"48-57",166530,https://pmc.ncbi.nlm.nih.gov/articles/PMC7881904/,https://webpages.charlotte.edu/rbunescu/data/ohiot1dm/OhioT1DM-dataset.html
 2,T1DEXI,Controlled-Access,2022,US,T1D,497,13522,27.21,"3-28",3778525,https://pubmed.ncbi.nlm.nih.gov/36795053/,https://doi.org/10.25934/PR00008428
-3,BIG IDEAs,Open-Access,"2022 & 2023",US,"PreD; ND",16,150,9.38,"8-11",36898,https://www.nature.com/articles/s41746-021-00465-w,https://doi.org/10.13026/zthx-5212
+3,BIG IDEAs,Open-Access,"2023",US,"PreD; ND",16,150,9.38,"8-11",36898,https://www.nature.com/articles/s41746-021-00465-w,https://doi.org/10.13026/zthx-5212
 4,DiaTrend,Controlled-Access,2023,US,T1D,54,27663,512.28,"31-1907",7565714,https://www.nature.com/articles/s41597-023-02469-5,https://doi.org/10.7303/syn38187184
 5,ShanghaiT1DM,Open-Access,2023,China,T1D,12,181,15.08,"7-42",15695,https://www.nature.com/articles/s41597-023-01940-7,https://doi.org/10.6084/m9.figshare.c.6310860
 6,ShanghaiT2DM,Open-Access,2023,China,T2D,100,1292,12.92,"4-41",112462,https://www.nature.com/articles/s41597-023-01940-7,https://doi.org/10.6084/m9.figshare.c.6310860
