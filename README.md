@@ -41,19 +41,19 @@ pip install -r requirements.txt
 
 4. ```Auto_script/```
     Contains automation scripts for streamlining the workflow. Includes:
-    - ```download_public_datasets.sh```: Automatically downloads the 5 public diabetes datasets into the "Original datasets" folder.
-    - ```preprocess.sh```: Processes the downloaded datasets into standardized formats for analysis.
+    - ```download_public_datasets.sh```: Automatically downloads 5 public diabetes datasets into the "Original datasets" folder.
+    - ```preprocess.sh```: Processes the downloaded datasets into a standardized format for analysis.
     - ```zero_order_auto_script.sh```: Automates the execution of all zero-order prediction model scripts.
     - ```linear_reg_auto_script.sh```: Automates the execution of all linear regression model scripts.
 
 5. ```Paper_Figures/```
-    Includes comparative analysis figures presented in the paper.
+    Includes comparative analysis figures presented in the above referenced paper.
 
 6. ```Script_for_Figures/```
-    Includes the Jupyter notebook files used to plot the figures presented in the paper.
+    Includes the Jupyter notebook files used to plot the figures presented in the above referenced paper.
 
 7. ```Script_for_Tables/```
-    Includes the Jupyter notebook files to calculate the data for the tables included in the paper.
+    Includes the Jupyter notebook files to calculate the data for the tables included in the above referenced paper.
 
 
 ## Run Automation Scripts
@@ -68,7 +68,7 @@ chmod +x *.sh   # Make all scripts executable
 ./linear_reg_auto_script.sh   #Run Linear Regression Prediction Models
 ```
 
-After running these scripts, all 5 public CGM datasets will be downloaded, preprocessed, and analyzed with both baseline prediction models. Results will be available in the ```baseline_performance/``` folder.
+After running these scripts, the 5 public CGM datasets will be downloaded, preprocessed, and analyzed with both baseline prediction models. Results will be available in the ```baseline_performance/``` folder.
 
 
 ## Comparative Analysis
