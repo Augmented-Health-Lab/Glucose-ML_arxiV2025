@@ -1,4 +1,4 @@
-Index,Dataset,Accessibility,Year Published,Country,Population,# Participants,Total # Days with CGM Data,Mean Days per Participant,Range of Days per Participant,Total Glucose Samples (# Observations),Link to Paper / Documentation,Link to Dataset
+Index,Dataset,Accessibility,Year Published,Country,Population,# Participants,Total # Days with CGM Data,Mean Days per Participant,Range of Days per Participant,Total Glucose Samples,Link to Paper / Documentation,Link to Dataset
 1,OhioT1DM,Controlled-Access,"2018 & 2020",US,T1D,12,652,54.33,"48-57",166530,https://pmc.ncbi.nlm.nih.gov/articles/PMC7881904/,https://webpages.charlotte.edu/rbunescu/data/ohiot1dm/OhioT1DM-dataset.html
 2,T1DEXI,Controlled-Access,2022,US,T1D,497,13522,27.21,"3-28",3778525,https://pubmed.ncbi.nlm.nih.gov/36795053/,https://doi.org/10.25934/PR00008428
 3,BIG IDEAs,Open-Access,"2023",US,"PreD; ND",16,150,9.38,"8-11",36898,https://www.nature.com/articles/s41746-021-00465-w,https://doi.org/10.13026/zthx-5212
