@@ -9,9 +9,9 @@ Artificial intelligence (AI) algorithms are a critical part of state-of-the-art 
 ---
 ## About
 
-This repository contains the code developed for analysis of 10 publicly available diabetes datasets curated in the Glucose-ML collection published here: https://doi.org/10.48550/arXiv.2507.14077. This repository does _not_ host any of the datasets directly but _only_ associated code for working with each dataset. Table 1 in the above referenced paper includes direct links for accessing and downloading the open-access datasets (5 out of 10) and direct links for requesting access to the controlled-access datasets (5 out of 10) in the Glucose-ML collection. 
+This repository contains the code developed for harmonized analysis of 10 publicly available diabetes datasets curated in the Glucose-ML collection published here: https://doi.org/10.48550/arXiv.2507.14077. This repository does _not_ host any of the datasets directly but _only_ associated data processing code for working with each dataset. Table 1 in the above referenced paper includes direct links for accessing and downloading the open-access datasets (5 out of 10) and direct links for requesting access to the controlled-access datasets (5 out of 10) in the Glucose-ML collection. 
 
-To support easy of use, this repository also provides automated scripts in the ```Auto_script/``` directory for downloading, preprocessinig (or harmonizing), and jointly analyzing the open-access diabetes datasets (5) in the Glucose-ML collection, including implementation of two naive baseline methods for the common ML task of blood glucose prediction.  
+To support easy of use, this repository also provides automated scripts in the ```Auto_script/``` directory for downloading, preprocessinig (or harmonizing), and jointly analyzing the open-access diabetes datasets (5) in the Glucose-ML collection, including implementation of two naive baseline methods for the common machine learning task of blood glucose prediction.  
 
 ## Requirements
 
