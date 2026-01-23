@@ -8,4 +8,4 @@ Index,Dataset,Accessibility,Year Published,Country,Population,# Participants,Tot
 7,T1DiabetesGranada,Controlled-Access,2024,Spain,T1D,736,257782,350.25,"8-1463",22608752,https://www.nature.com/articles/s41597-023-02737-4,https://doi.org/10.5281/zenodo.10050943
 8,AI-READI,Controlled-Access,2024,US,"T2D; PreD; ND",1067,11181,10.66,"2-13",2860350,https://doi.org/10.1038/s42255-024-01165-x,https://doi.org/10.60775/fairhub.2
 9,UCHTT1DM,Open-Access,2024,Chile,"T1D; ND",20,127,6.35,"3-8",29174,https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10433750,https://github.com/fisiologiacuantitativauc/UC_HT_T1DM
-10,CGMacros,Open-Access,2025,US,"T2D; PreD; ND",45,493,10.96,"8-20",629825,"Paper under review",https://doi.org/10.13026/3z8q-x658
+10,CGMacros,Open-Access,2025,US,"T2D; PreD; ND",45,493,10.96,"8-20",629825,https://doi.org/10.1038/s41597-025-05851-7,https://doi.org/10.13026/3z8q-x658
